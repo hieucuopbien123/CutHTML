@@ -1,0 +1,81 @@
+// Fonts
+@font-face {
+  font-family: AnandaRegular;
+  src: url(../fonts/AnandaRegular.ttf);
+}
+@font-face {
+  font-family: RobotoMedium;
+  src: url("../fonts/Roboto/Roboto-Medium.ttf");
+}
+@font-face {
+  font-family: RobotoLight;
+  src: url("../fonts/Roboto/Roboto-Light.ttf");
+}
+@font-face {
+  font-family: PoppinsRegular;
+  src: url("../fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: PoppinsBold;
+  src: url("../fonts/Poppins/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: PatrickRegular;
+  src: url("../fonts/Patrick_Hand/PatrickRegular.ttf");
+}
+
+
+// CSS Reset
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+img {
+  user-select: none;
+  user-drag: none;
+  -webkit-user-drag: none;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+html, body {
+  @extend .text-normal;
+  min-width: 100%;
+  min-height: 100%;
+  font-family: PoppinsRegular;
+  transition: all 0.3s linear;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body:has(input[id="dark"]:checked) { 
+  --primary-color-lighter: rgba(255, 255, 255, 0.03);
+  --primary-color: rgba(255, 255, 255, 0.1);
+  --primary-color-darken: rgba(255, 255, 255, 0.6);
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --head-text-color: rgba(255,255,255,0.4);
+} 
+
+// Font size
+.text-normal {
+  font-size: clamp(16px, 13.1424px + 0.5714vw, 20px);
+}
+.text-large {
+  font-size: clamp(30px, 15.7136px + 2.8571vw, 50px);
+}
+.text-superlarge{
+  font-size: clamp(100px, 64.2864px + 7.1429vw, 150px);
+}
+
+// Container
+.main-container {
+  width: min(1400px, 85%);
+  margin: 0 auto;
+}
+.flex-container {
+  display: flex;
+  align-items: center;
+}

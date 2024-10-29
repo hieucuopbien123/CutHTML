@@ -1,0 +1,52 @@
+@use "./common.scss";
+
+// Gaps
+.shortgap {
+  padding-top: 20px;
+}
+.middlegap {
+  padding-top: 50px;
+}
+.longgap {
+  padding-top: 100px;
+}
+
+
+// Button
+.btn {
+  opacity: 0.6;
+  padding: 18px;
+  background-color: var(--bg-color);
+  border: 1px solid var(--primary-color-darken);
+  cursor: pointer;
+  overflow: hidden;
+  width: 180px;
+  color: var(----text-color);
+}
+.btn-arrow {
+  @extend .btn, .flex-container;
+  gap: 10px;
+}
+.btn-hover-polish {
+  @extend .btn-arrow;
+  position: relative;
+  z-index: 1;
+  transition: all 0.15s linear;
+  &::after {
+    content: '';
+    z-index: -1;
+    background-color: var(--primary-color-darken);
+    position: absolute;
+    top: -50%;
+    bottom: -50%;
+    width: 1.25em;
+    rotate: 35deg;
+    translate: -405% 0;
+    transition: all 0.15s linear;
+  }
+  &:hover::after {
+    translate: -250% 0;
+  }
+}
+
+
